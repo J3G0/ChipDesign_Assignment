@@ -13,7 +13,7 @@ The given boolean expression that needs to be designed is;  Z = not[A.B+C.not(D)
 </details>
 
 <details>
-<summary>Design in L-Edit</summary>
+<summary>Truth Table</summary>
 
 ![Tiletypes](Img/TruthTable_JeffreyGorissen.png)
 
@@ -33,7 +33,7 @@ The given boolean expression that needs to be designed is;  Z = not[A.B+C.not(D)
 ## Simulation
 
 <details>
-<summary>Design in L-Edit</summary>
+<summary>Result of the simulation</summary>
 
 ![Tiletypes](Img/Simulation_JeffreyGorissen.png)
 
