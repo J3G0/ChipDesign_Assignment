@@ -1,0 +1,358 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *             Student Version 5.3a          *
+                 *                                           *
+                 *********************************************
+
+	Date: Tue Apr 28 21:15:58 2020
+	Circuit File: C:\GoogleDrive\SchakelIIW\Semester_2\CHIP\Labo\OpdrachtChip\L-Edit_output_JeffreyGorissen_SIM.spc
+	Analysis: Transient
+
+**************************  Circuit Description  **************************
+
+     1:  * Circuit Extracted by Tanner Research's L-Edit V7.12 / Extract V4.00 ;
+     2:  * TDB File:  C:\GoogleDrive\SchakelIIW\Semester_2\CHIP\Labo\OpdrachtChip\LaboOpdrJeffreyGorissen, Cell:  Cell0
+     3:  * Extract Definition File:  C:\GoogleDrive\SchakelIIW\Semester_2\CHIP\Labo\amis05_s10_12_v1_0_v7(1).ext
+     4:  * Extract Date and Time:  04/28/2020 - 21:01
+     5:  
+     6:  *include ntyp.md
+     7:  ***************** cmos05 nmos typical models **********************
+     8:  * a test of release 3.0
+     9:  * for more information, please read the models.info file
+    10:  *
+    11:  * date: mar 17/98                                                               
+    12:  * lot: e744621             waf: 7                                             
+    13:  * temp= 27                                                                      
+    14:  * typical set nmos
+    15:  .model en          nmos     level   = 49                  
+    16:  +tnom    = 27             tox     = 1e-8           xj      = 2.35e-7            
+    17:  +nch     = 2e17           nsub    = 4e16           vth0    = 0.6097457 
+    18:  +k1      = 0.6369321      k2      = 1.469165e-4    k3      = 29.501             
+    19:  +k3b     = -0.68          w0      = 8.809842e-6    nlx     = 1.884526e-7        
+    20:  +dvt0    = 5.7749986      dvt1    = 0.4474586      dvt2    = -0.0251598         
+    21:  +vbm     = -10            u0      = 588.4312781    ua      = 2.155132e-9        
+    22:  +ub      = 1.32731e-21    uc      = 9.324184e-11   vsat    = 1.128844e5         
+    23:  +a0      = 1.280555       ags     = 0.2404422      b0      = 3.6366e-7        
+    24:  +b1      = 2.337947e-6    keta    = -8.625844e-4   a1      = 0                  
+    25:  +a2      = 0.8            rdsw    = 283.6186958    prwg    = 0.5                
+    26:  +prwb    = -0.0827266     wr      = 1              wint    = -5.230179e-8       
+    27:  +lint    = 1.353614e-8    dwg     = 0              dwb     = 1.11e-8
+    28:  +voff    = -0.1245595     nfactor = 0.8425275      cit     = 0                  
+    29:  +cdsc    = -1e-4          cdscd   = -1e-4          cdscb   = 2e-3               
+    30:  +eta0    = 0.07           etab    = -0.054         dsub    = 0.4957726          
+    31:  +pclm    = 0.8804854      pdiblc1 = 0.0132091      pdiblc2 = 1.27332e-3         
+    32:  +pdiblcb = 0.090022       drout   = 0.1532732      pscbe1  = 4.52617e8          
+    33:  +pscbe2  = 5e-5           pvag    = 0.20417        delta   = 0.01               
+    34:  +alpha0  = 0              beta0   = 30             pb      = 0.75560           
+    35:  +pbsw    = 0.68638        rsh     = 2.30             
+    36:  +js      = 7.05e-04       jsw     = 4.3e-9   
+    37:  +mobmod  = 1              prt     = -57.2389305    ute     = -1.6096023         
+    38:  +kt1     = -0.3010319     kt1l    = -3.172847e-8   kt2     = -0.0657457         
+    39:  +ua1     = 1.737957e-9    ub1     = -2.95611e-18   uc1     = 1.692194e-11       
+    40:  +at      = 2.497153e4     capmod  = 1              xt      = 1.55e-7            
+    41:  +nqsmod  = 0              elm     = 5              xpart   = 0                
+    42:  +wl      = 0              wln     = 1              ww      = 0                  
+    43:  +wwn     = 1              wwl     = -2.99e-20      wmin    = 0                  
+    44:  +wmax    = 1              ll      = 0              lln     = 1                  
+    45:  +lw      = 0              lwn     = 1              lwl     = 0                  
+    46:  +lmin    = 0              lmax    = 1              cgsl    = 0                  
+    47:  +cgdl    = 0              ckappa  = 0.6            cf      = 0                  
+    48:  +clc     = 0.1e-6         cle     = 0.6            cgdo    = 1.38e-10          
+    49:  +cgso    = 1.38e-10       cgbo    = 3.45e-10                  
+    50:  +cj      = 7.7587e-4	  
+    51:  +mj      = 0.35297        cjsw    = 3.4485e-10       mjsw    = 0.26477 
+    52:  +kf	 = 3.67e-28	  af	  = 0.91		   	
+    53:  *+cjswg   = 1.370e-10      pbswg   = 0.6	   mjswg    = 0.220             
+    54:  * define for eldo
+    55:  *+ lis=2		diolev=2   tlevi=0
+    56:  *                                                                               
+    57:  **********************************************************
+    58:  * single diode model cards
+    59:  **********************************************************
+    60:  *                                                    
+    61:  * n+/psub junction diode in forward mode
+    62:  *
+    63:  .model nppf d (
+    64:  + level =    1
+    65:  + tnom  =    27
+    66:  + is    =    1.681e-7 
+    67:  + n     =    1.09
+    68:  + rs    =    1.1e-6
+    69:  + xti   =    2.54
+    70:  + eg    =    1.02
+    71:  + cjsw  =    3.45e-10
+    72:  + vj    =    0.72
+    73:  + mj    =    0.35
+    74:  + mjsw  =    0.26
+    75:  +)
+    76:  *+ isw   =    7.605e-13
+    77:  *+ cj0   =    7.76e-4
+    78:  *                                                    
+    79:  * n+/psub junction diode in reverse mode            
+    80:  *
+    81:  .model nppr d (
+    82:  + level =    1
+    83:  + tnom  =    27
+    84:  + is    =    1.541e-5 
+    85:  + n     =    1.09
+    86:  + rs    =    1.1e-6
+    87:  + xti   =    -8
+    88:  + eg    =    1.02
+    89:  + cjsw  =    3.45e-10
+    90:  + vj    =    0.72
+    91:  + mj    =    0.35
+    92:  + mjsw  =    0.26
+    93:  +)
+    94:  *+ isw   =    5.494e-11
+    95:  *+ cj0   =    7.76e-4
+    96:  *                                                    
+    97:  * nwell/psub junction diode in forward mode         
+    98:  *
+    99:  .model nwpf d (
+   100:  + level =    1
+   101:  + tnom  =    27
+   102:  + is    =    3.442e-7
+   103:  + n     =    1.14
+   104:  + rs    =    1.2e-6
+   105:  + xti   =    2.39
+   106:  + eg    =    1.00
+   107:  + cjsw  =    2.84e-10
+   108:  + vj    =    0.6
+   109:  + mj    =    0.21
+   110:  + mjsw  =    0.20
+   111:  +)
+   112:  *+ isw   =    2.672e-12
+   113:  *+ cj0   =    1.45e-4
+   114:  *                                                    
+   115:  * nwell/psub junction diode in reverse mode         
+   116:  * 
+   117:  .model nwpr d (
+   118:  + level =    1
+   119:  + tnom  =    27
+   120:  + is    =    1.32e-6
+   121:  + n     =    1.12
+   122:  + xti   =    1.00
+   123:  + eg    =    1.12
+   124:  + cjsw  =    2.84e-10
+   125:  + vj    =    0.6
+   126:  + mj    =    0.21
+   127:  + mjsw  =    0.20
+   128:  +)
+   129:  *+ isw   =    4.68e-11
+   130:  *+ cj0   =    1.45e-4
+   131:  **********************************************************
+   132:  *end of: ntyp.md
+   133:  *include ptyp.md
+   134:  *********************** cmos05 pmos typical models *****************
+   135:  * release 3.0
+   136:  * for more information, please read the models.info file.
+   137:  *
+   138:  * date: mar 17/98                                                               
+   139:  * lot: e744621p1             waf: 7                                             
+   140:  * die: 1                     dev: p0.8/0.5                                      
+   141:  * temp= 27                                                                      
+   142:  .model ep   pmos  level   = 49                 
+   143:  +tnom    = 27             tox     = 1e-8           xj      = 3e-7               
+   144:  +nch     = 2e17           nsub    = 4e16           vth0    = -0.6103469         
+   145:  +k1      = 0.6851333      k2      = 8.465407e-5    k3      = 21.94              
+   146:  +k3b     = -0.065         w0      = 4.31e-6        nlx     = 1.01913e-7         
+   147:  +dvt0    = 5.4145011      dvt1    = 0.4773587      dvt2    = -0.0102858         
+   148:  +vbm     = -10            u0      = 148.6428164    ua      = 2.266657e-9        
+   149:  +ub      = 3.571409e-20   uc      = -1.53433e-11   vsat    = 6.666424e5         
+   150:  +a0      = 1.2571212      ags     = 0.1706772      b0      = 1.059729e-7        
+   151:  +b1      = 1.377612e-7    keta    = -0.0187078     a1      = 0                  
+   152:  +a2      = 0.8            rdsw    = 874.4420611    prwg    = 0.5                
+   153:  +prwb    = -0.0928952     wr      = 1              wint    = -9.27e-8           
+   154:  +lint    = 1.711979e-8    dwg     = 0              dwb     = 9.339e-9           
+   155:  +voff    = -0.1156803     nfactor = 0.7335277      cit     = 0                  
+   156:  +cdsc    = -1e-4          cdscd   = -1e-4          cdscb   = 2e-3               
+   157:  +eta0    = 0.2218665      etab    = -0.0998531     dsub    = 0.547              
+   158:  +pclm    = 1.5332371      pdiblc1 = 2.489418e-4    pdiblc2 = 7.383994e-4        
+   159:  +pdiblcb = -0.9           drout   = 1              pscbe1  = 6e8                
+   160:  +pscbe2  = 5e-5           pvag    = -0.1894078     delta   = 0.01               
+   161:  +alpha0  = 0              beta0   = 30             pb      = 0.78469            
+   162:  +pbsw    = 0.69350        rsh     = 2.10           js      = 8.0e-4
+   163:  +jsw     = 4.0e-9                  
+   164:  +mobmod  = 1              prt     = 190.1524511    ute     = -1.045139          
+   165:  +kt1     = -0.2522072     kt1l    = -1.867722e-8   kt2     = -9.047095e-3       
+   166:  +ua1     = 1.511701e-9    ub1     = -5.05882e-18   uc1     = -5.56733e-11       
+   167:  +at      = 1e5            capmod  = 1              xt      = 1.55e-7            
+   168:  +nqsmod  = 0              elm     = 5              xpart   = 0.4                
+   169:  +wl      = 0              wln     = 1              ww      = 0                  
+   170:  +wwn     = 1              wwl     = -5e-21         wmin    = 0                  
+   171:  +wmax    = 1              ll      = 0              lln     = 1                  
+   172:  +lw      = 0              lwn     = 1              lwl     = 0                  
+   173:  +lmin    = 0              lmax    = 1              cgsl    = 0                  
+   174:  +cgdl    = 0              ckappa  = 0.6            cf      = 0                  
+   175:  +clc     = 1e-7           cle     = 0.6            cgdo    = 1.38e-10          
+   176:  +cgso    = 1.38e-10       cgbo    = 3.45e-10       
+   177:  +cj      = 8.1577e-4            
+   178:  +mj      = 0.36667        cjsw    = 3.5456e-10     mjsw    = 0.27422        
+   179:  +kf	 = 1.20e-28	  af	  = 1.1              	
+   180:  *+cjswg   = 1.10e-10       pbswg   = 0.6	   mjswg    = 0.220             
+   181:  * define for eldo
+   182:  *+ lis=2		diolev=2   tlevi=0
+   183:  *                                                                               
+   184:  ************************
+   185:  * vertical pnp bipolar
+   186:  ************************
+   187:  .model pnpv pnp (
+   188:  +is     =    4.29e-18
+   189:  +bf     =    7.75
+   190:  +vaf    =    150
+   191:  +xti    =    2.4
+   192:  +xtb    =    1.60
+   193:  +br     =    500
+   194:  +)
+   195:  *+tnom   =    27
+   196:  *
+   197:  **********************************************************
+   198:  * single diode model cards
+   199:  **********************************************************
+   200:  *                                                    
+   201:  *  p+/nwell junction diode in forward mode           
+   202:  *
+   203:  .model ppnf d (
+   204:  + level =    1
+   205:  + tnom  =    27
+   206:  + is    =    2.796e-7
+   207:  + n     =    1.04
+   208:  + rs    =    1.2e-6
+   209:  + xti   =    2.70
+   210:  + eg    =    1.06
+   211:  + cjsw  =    3.55e-10
+   212:  + vj    =    0.74
+   213:  + mj    =    0.37
+   214:  + mjsw  =    0.27
+   215:  +)
+   216:  *+ isw   =    8.62e-13
+   217:  *+ cj0   =    8.16e-4
+   218:  *                                                    
+   219:  * p+/nwell junction diode in reverse mode           
+   220:  * 
+   221:  .model ppnr d (
+   222:  + level =    1
+   223:  + tnom  =    27
+   224:  + is    =    5.616e-5
+   225:  + n     =    1.04
+   226:  + rs    =    1.2e-6
+   227:  + xti   =    -12
+   228:  + eg    =    1.06
+   229:  + cjsw  =    3.55e-10
+   230:  + vj    =    0.74
+   231:  + mj    =    0.37
+   232:  + mjsw  =    0.27
+   233:  +)
+   234:  *+ isw   =    10.235e-11
+   235:  *+ cj0   =    8.16e-4
+   236:  **********************************************************
+   237:  *end of: ptyp.md
+   238:  
+   239:  M1 out nd 4 gnd EN L=0.5u W=3.6u 
+   240:  * M1 DRAIN GATE SOURCE BULK (54.2 12.6 54.7 16.2) 
+   241:  M2 4 c 13 gnd EN L=0.5u W=3.6u 
+   242:  * M2 DRAIN GATE SOURCE BULK (63.4 12.6 63.9 16.2) 
+   243:  M3 13 e gnd gnd EN L=0.5u W=3.6u 
+   244:  * M3 DRAIN GATE SOURCE BULK (61.1 12.6 61.6 16.2) 
+   245:  M4 gnd b 10 gnd EN L=0.5u W=3.6u 
+   246:  * M4 DRAIN GATE SOURCE BULK (58.8 12.6 59.3 16.2) 
+   247:  M5 10 a out gnd EN L=0.5u W=3.6u 
+   248:  * M5 DRAIN GATE SOURCE BULK (56.5 12.6 57 16.2) 
+   249:  M6 nd d gnd gnd EN L=0.5u W=1.2u 
+   250:  * M6 DRAIN GATE SOURCE BULK (48.1 15 48.6 16.2) 
+   251:  M7 6 nd out vdd EP L=0.5u W=4.8u 
+   252:  * M7 DRAIN GATE SOURCE BULK (54.2 19.7 54.7 24.5) 
+   253:  M8 6 c out vdd EP L=0.5u W=4.8u 
+   254:  * M8 DRAIN GATE SOURCE BULK (63.4 19.7 63.9 24.5) 
+   255:  M9 out e 6 vdd EP L=0.5u W=4.8u 
+   256:  * M9 DRAIN GATE SOURCE BULK (61.1 19.7 61.6 24.5) 
+   257:  M10 6 b vdd vdd EP L=0.5u W=4.8u 
+   258:  * M10 DRAIN GATE SOURCE BULK (58.8 19.7 59.3 24.5) 
+   259:  M11 vdd a 6 vdd EP L=0.5u W=4.8u 
+   260:  * M11 DRAIN GATE SOURCE BULK (56.5 19.7 57 24.5) 
+   261:  M12 nd d vdd vdd EP L=0.5u W=2.4u 
+   262:  * M12 DRAIN GATE SOURCE BULK (48.1 19.7 48.6 22.1) 
+   263:  
+   264:  vvdd vdd gnd 5
+   265:  vgnd gnd 0 0
+   266:  va a gnd pulse(0 5 800n 1n 1n 800n 1600n)
+   267:  vb b gnd pulse(0 5 400n 1n 1n 400n 800n)
+   268:  vc c gnd pulse(0 5 200n 1n 1n 200n 400n)
+   269:  vd d gnd pulse(0 5 100n 1n 1n 100n 200n)
+   270:  ve e gnd pulse(0 5 50n 1n 1n 50n 100n)
+   271:  .tran 1p 1600n
+   272:  
+   273:  * Total Nodes: 13
+   274:  * Total Elements: 12
+   275:  * Extract Elapsed Time: 0 seconds
+   276:  .END
+   277:  
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Stepsize ............ : 1p
+	Final time .......... : 1600n
+	Use Initial Conditions: Off
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations.....................: 2830
+	Number of iterations for transient analysis....: 2789
+	Total number of timepoints.....................: 769
+	Number of timepoints accepted..................: 677
+	Number of timepoints rejected..................: 92
+	Total analysis time (sec)......................: 0.573
+	Transient analysis time (sec)..................: 0.57
+	Time spent in device loading (sec).............: 0.065
+	Time spent in L-U decomposition (sec)..........: 0.005
+	Time spent in matrix reordering (sec)..........: 0
+	Time spent in matrix solving (sec).............: 0
+	Time spent in transient L-U decomposition (sec): 0.005
+	Time spent in transient matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: * Circuit Extracted by Tanner Research's L-Edit V7.12 / Extract V4.00 ;
+
+Warning: Pd = 0 is less than W for m12 in model ep.
+Warning: Ps = 0 is less than W for m12 in model ep.
+Warning: nsub is ignored because k1 or k2 is given.
+Warning: xt is ignored because k1 or k2 is given.
+Warning: vbm is ignored because k1 or k2 is given.
+Warning: Pd = 0 is less than W for m11 in model ep.
+Warning: Ps = 0 is less than W for m11 in model ep.
+Warning: nsub is ignored because k1 or k2 is given.
+Warning: xt is ignored because k1 or k2 is given.
+Warning: vbm is ignored because k1 or k2 is given.
+Warning: Pd = 0 is less than W for m6 in model en.
+Warning: Ps = 0 is less than W for m6 in model en.
+Warning: nsub is ignored because k1 or k2 is given.
+Warning: xt is ignored because k1 or k2 is given.
+Warning: vbm is ignored because k1 or k2 is given.
+Warning: Pd = 0 is less than W for m5 in model en.
+Warning: Ps = 0 is less than W for m5 in model en.
+Warning: nsub is ignored because k1 or k2 is given.
+Warning: xt is ignored because k1 or k2 is given.
+Warning: vbm is ignored because k1 or k2 is given.
+Warning: ve: no DC value, transient time 0 value used
+Warning: vd: no DC value, transient time 0 value used
+Warning: vc: no DC value, transient time 0 value used
+Warning: vb: no DC value, transient time 0 value used
+Warning: va: no DC value, transient time 0 value used
+
