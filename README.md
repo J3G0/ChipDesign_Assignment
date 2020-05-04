@@ -9,7 +9,7 @@ The design process was started on paper. A picture of this process is included.
 First the electrical schematic was drawn, after this the euler method was used to determine the logical order required to make a stick diagram. 
 <details>
 <summary>preliminary design on paper</summary>
-![DesignOnPaper](https://raw.githubusercontent.com/J3G0/ChipDesign_Assignment/master/Img/DesignOnPaper.jpg)
+![DesignOnPaper](https://raw.githubusercontent.com/J3G0/ChipDesign_Assignment/blob/master/Img/DesignOnPaper.jpg)
 </details>
 
 ## CMOS drawing
